@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
                 element: <Doctors />,
             },
             {
-                path: "/doctosrs/:specialty",
+                path: "/doctors/:speciality",
                 element: <Doctors />,
             },
             {
