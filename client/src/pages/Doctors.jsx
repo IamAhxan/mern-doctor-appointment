@@ -7,6 +7,7 @@ const Doctors = () => {
     const { speciality } = useParams()
     const { doctors } = useContext(AppContext)
     const [filterDoc, setFilterDoc] = useState([])
+    const [showFilter, setShowFilter] = useState(false)
     const specialities = [...new Set(doctors.map(doc => doc.speciality))];
 
 
@@ -24,9 +25,10 @@ const Doctors = () => {
     return (
         <div>
             <p className='text-gray-600'>Browse through the doctors specialist.</p>
-            <div className='flex flex-colsm:flex-row items-start gap-5 mt-5'>
+            <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
                 {/* ---LEFT SIDE--- */}
-                <div className=' flex flex-col gap-4 text-sm text-gray-600'>
+                <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter ? 'bg-primary text-white' : ''}`} onClick={() => setShowFilter(prev => !prev)}>Filters</button>
+                <div className={` flex-col gap-4 text-sm text-gray-600 ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
                     {
                         specialities.map((item) => (
                             <p onClick={() => speciality === item ? navigate('/doctors') : navigate(`/doctors/${item}`)} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${speciality === item ? "bg-indigo-100 text-black" : ""}`}>{item}</p>
