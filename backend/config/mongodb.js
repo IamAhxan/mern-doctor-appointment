@@ -11,7 +11,7 @@ const connectDB = async () => {
             process.exit();
 
         })
-        await mongoose.connect(`${process.env.MONGODB_URI}/prescripto}`)
+        await mongoose.connect(`${process.env.MONGODB_URI}/prescripto`)
 
     } catch (error) {
         console.log("Error while connecting DB" + error)
