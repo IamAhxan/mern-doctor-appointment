@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import Login from './Pages/Login'
+import { AdminContext } from './context/AdminContext'
 
 const App = () => {
+  const { aToken } = useContext(AdminContext)
+
   return (
-    <div>
-      App
-    </div>
+    <>
+      {aToken ? (
+        <div>
+          <h1>Welcome Admin!</h1>
+        </div>
+      ) : (
+        <div>
+          <Login />
+        </div>
+      )}
+    </>
   )
 }
 

@@ -2,8 +2,9 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 const AppLayout = () => {
+    const notify = () => toast("Wow so easy!");
     return (
-        <div className='mx-4 sm:mx-[10%]'>
+        <div className=''>
             <main>
                 <Outlet />
             </main>

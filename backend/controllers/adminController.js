@@ -86,7 +86,8 @@ const loginAdmin = async (req, res) => {
             const token = jwt.sign(email + password, process.env.JWT_SECRET)
             res.json({
                 success: true,
-                token
+                token,
+                message: "Welcome Admin"
             })
         } else {
             res.json({
