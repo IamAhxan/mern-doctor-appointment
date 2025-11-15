@@ -3,12 +3,14 @@ import { assets } from "./../assets/assets.js"
 import { AdminContext } from '../context/AdminContext.jsx'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [state, setState] = useState('Admin')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { setAToken, backendUrl } = useContext(AdminContext)
+    const navigate = useNavigate()
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
@@ -19,6 +21,7 @@ const Login = () => {
                     localStorage.setItem('aToken', data.token)
                     setAToken(data.token)
                     toast.success(data.message)
+                    navigate('/')
                 } else {
                     toast.error(data.message)
                 }
