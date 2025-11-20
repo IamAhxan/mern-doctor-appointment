@@ -7,6 +7,7 @@ import Dashboard from "./src/Pages/Admin/Dashboard";
 import AllAppointments from "./src/Pages/Admin/AllAppointments";
 import AddDoctor from "./src/Pages/Admin/AddDoctor";
 import DoctorList from "./src/Pages/Admin/DoctorList";
+import DoctorDashboard from "./src/Pages/Doctor/DoctorDashboard";
 
 const routes = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const routes = createBrowserRouter([
                     {
                         path: '/doctor-list',
                         element: <DoctorList />
-                    }
+                    },
                 ]
             },
         ]

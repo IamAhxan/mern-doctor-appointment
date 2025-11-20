@@ -2,14 +2,16 @@
 import React, { useContext } from 'react'
 import { Navigate, Outlet } from 'react-router-dom' // Import Navigate and Outlet
 import { AdminContext } from './context/AdminContext'
+import { DoctorContext } from './context/DoctorContext'
 // Don't import Login here, let the router handle it
 // Don't import Sidebar here, let AppLayout handle it
 
 const App = () => {
   const { aToken } = useContext(AdminContext)
+  const { dToken } = useContext(DoctorContext)
 
   // 1. If NOT logged in, redirect to /login (or show Login page)
-  if (!aToken) {
+  if (!aToken && !dToken) {
     return <Navigate to="/login" replace />
     // OR if you want Login to be a child component that *doesn't* use AppLayout
     // you would return <Login /> if /login was not a separate route.

@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 
 const AppLayout = () => {
-    const notify = () => toast("Wow so easy!");
     return (
         <div className=''>
             <Navbar />
