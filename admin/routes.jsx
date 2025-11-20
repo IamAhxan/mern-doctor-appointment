@@ -8,6 +8,8 @@ import AllAppointments from "./src/Pages/Admin/AllAppointments";
 import AddDoctor from "./src/Pages/Admin/AddDoctor";
 import DoctorList from "./src/Pages/Admin/DoctorList";
 import DoctorDashboard from "./src/Pages/Doctor/DoctorDashboard";
+import DoctorAppointments from "./src/Pages/Doctor/DoctorAppointments";
+import DoctorProfile from "./src/Pages/Doctor/DoctorProfile";
 
 const routes = createBrowserRouter([
     {
@@ -38,6 +40,19 @@ const routes = createBrowserRouter([
                         path: '/doctor-list',
                         element: <DoctorList />
                     },
+                    {
+                        path: '/doctor-dashboard',
+                        element: <DoctorDashboard />
+                    },
+                    {
+                        path: '/doctor-appointments',
+                        element: <DoctorAppointments />
+                    },
+                    {
+                        path: '/doctor-profile',
+                        element: <DoctorProfile />
+                    },
+
                 ]
             },
         ]
