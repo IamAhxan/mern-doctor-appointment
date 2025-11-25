@@ -10,13 +10,14 @@ import userRouter from './routes/userRoute.js';
 // APP CONFIG
 const app = express();
 const port = process.env.PORT || 4000;
+const allowedOrigins = ['https://prescripto-client-lilac.vercel.app', 'https://prescripto-panel-six.vercel.app']
 connectDB();
 connectCloudinary()
 
 // middleware
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: allowedOrigins }));
 
 // api endpoints
 app.use('/api/admin', adminRouter)
